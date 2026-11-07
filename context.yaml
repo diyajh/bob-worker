@@ -1,0 +1,18 @@
+# Which files/docs to load per task type.
+default:
+  - skills.md
+  - server/README.md
+tasks:
+  strings:
+    - tasks/strings.md
+  keys:
+    - tasks/keys.md
+  lists:
+    - tasks/lists.md
+  hashes:
+    - tasks/hashes.md
+  integration:
+    - tasks/strings.md
+    - tasks/keys.md
+    - tasks/lists.md
+    - tasks/hashes.md
