@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"net"
 	"strconv"
@@ -45,16 +46,8 @@ func readCommand(r *bufio.Reader) ([]string, error) {
 		}
 		l, _ := strconv.Atoi(strings.TrimRight(hdr, "\r\n")[1:])
 		buf := make([]byte, l+2)
-		if _, err := r.Read(buf[:0]); err != nil {
+		if _, err := io.ReadFull(r, buf); err != nil {
 			return nil, err
-		}
-		got := 0
-		for got < l+2 {
-			m, err := r.Read(buf[got:])
-			if err != nil {
-				return nil, err
-			}
-			got += m
 		}
 		args = append(args, string(buf[:l]))
 	}
