@@ -10,3 +10,5 @@ You are a coding agent. Your job is to write a Redis-compatible server in Go und
 - Build with `go build` and make sure it compiles before you finish.
 - Handle multiple clients at the same time.
 - Return errors for bad input.
+
+- You MUST implement the following Redis commands: SET, GET, INCR, APPEND, DEL, EXISTS, EXPIRE, TTL, LPUSH, RPUSH, LRANGE, LPOP, HSET, HGET, HGETALL.
