@@ -1,13 +1,9 @@
 # Which model handles which task type.
-default: worker-small
+# Cheapest available model on purpose: the Worker must fail often at baseline.
+default: asi1-mini
 tasks:
-  strings: worker-small
-  keys: worker-small
-  lists: worker-small
-  hashes: worker-small
-  integration: worker-small
-models:
-  worker-small:
-    provider: configured-in-bob-env   # cheapest available model; must fail often at baseline
-    max_tokens: 8000
-    temperature: 0.7
+  strings: asi1-mini
+  keys: asi1-mini
+  lists: asi1-mini
+  hashes: asi1-mini
+  integration: asi1-mini
